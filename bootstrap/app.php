@@ -48,6 +48,11 @@ $app->singleton(
     App\Console\Kernel::class
 );
 
+use Illuminate\Cache\Repository as CacheImplementation;
+use Illuminate\Contracts\Cache\Repository as CacheContract;
+
+$app->singleton(CacheImplementation::class, CacheContract::class);
+
 /*
 |--------------------------------------------------------------------------
 | Register Config Files
