@@ -62,6 +62,8 @@ $app->singleton(
 $app->configure('app');
 
 $app->configure('tinker');
+
+$app->configure('lighthouse');
 /*
 |--------------------------------------------------------------------------
 | Register Middleware
@@ -96,6 +98,11 @@ $app->configure('tinker');
 // $app->register(App\Providers\AuthServiceProvider::class);
 // $app->register(App\Providers\EventServiceProvider::class);
 $app->register(\Laravel\Tinker\TinkerServiceProvider::class);
+
+$app->register(App\Providers\AppServiceProvider::class);
+
+$app->register(App\Providers\AuthServiceProvider::class);
+
 /*
 |--------------------------------------------------------------------------
 | Load The Application Routes
