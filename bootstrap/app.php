@@ -50,6 +50,7 @@ $app->singleton(
 
 use Illuminate\Cache\Repository as CacheImplementation;
 use Illuminate\Contracts\Cache\Repository as CacheContract;
+use Nuwave\Lighthouse\Pagination\PaginationServiceProvider;
 
 $app->singleton(CacheImplementation::class, CacheContract::class);
 
@@ -107,6 +108,8 @@ $app->register(\Laravel\Tinker\TinkerServiceProvider::class);
 $app->register(App\Providers\AppServiceProvider::class);
 
 $app->register(App\Providers\AuthServiceProvider::class);
+
+$app->register(PaginationServiceProvider::class);
 
 /*
 |--------------------------------------------------------------------------
